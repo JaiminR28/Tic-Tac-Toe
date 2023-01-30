@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Signika+Negative&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #7400b3;
+  color: white;
+  height: 55px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-family: 'Signika Negative', sans-serif;
+}
+body {
+  background-color: darkgreen;
+}
+nav ul {
+  list-style-type: none;
+}
+
+nav img {
+  width: 35px;
+  margin: 0 12px 0 12px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameField {
+  display: flex;
+  /* margin-top: 70px; */
+  margin-left: 40%;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  /* margin-left: 50%;
+  margin-right: 50%; */
+  z-index: 1;
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, 7vw);
+  grid-template-columns: repeat(3, 7vw);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 3;
+}
+
+.box {
+  border: 7px solid #ffffff;
+  /* border-radius: 12px; */
+  font-size: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-background {
+  position: absolute;
+  z-index: 2;
+  border-radius: 20px;
+  width: 30vw;
+  box-shadow: 5px 10px rgba(245, 245, 220, 0.318);
+}
+
+@media only screen and (max-width: 1000px) {
+  .box {
+    border: 3.5px solid #ffffff;
+  }
+  body {
+    margin: 12px;
+  }
+  .gameContainer {
+    /* display: grid; */
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .gameInfo {
+    margin: 10px;
+  }
+  .container {
+    margin: 70%;
+  }
+}
+.boxtext {
+  font-family: 'Edu VIC WA NT Beginner', cursive;
+  color: white;
+}
+
+/* .box:hover {
+    background-color: #ece4fc;
+  } */
+
+.info {
+  font-size: 22px;
+}
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 34px;
+  font-family: 'Baloo Da 2', cursive;
+  color: #ece4fc;
+  align-items: center;
+  font-size: 2vw;
+}
+.imgBox img {
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.br-0 {
+  border-right: 0;
+}
+
+.bl-0 {
+  border-left: 0;
+}
+
+.bt-0 {
+  border-top: 0;
+}
+
+.bb-0 {
+  border-bottom: 0;
+}
+
+.b-r {
+  border-radius: 2px;
+}
+.line {
+  background-color: orange;
+  width: 0;
+  height: 7px;
+  z-index: 4;
+  position: absolute;
+  transform: translate(7vw, 0.5vw) rotate(90deg);
+  -webkit-animation: increase 3s;
+  -moz-animation: increase 3s;
+  -o-animation: increase 3s;
+  animation: increase 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes increase {
+  100% {
+    width: 21vw;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .reset-button-text {
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #reset {
+    margin: 0;
+    margin-top: 10px;
+  }
+  .container-background {
+    width: 70vw;
+  }
+  .container {
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+  }
+}
+
+/* CSS */
+#reset {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 1vw;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+#reset:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+#reset:hover .button-82-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+#reset:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+#reset:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+#reset:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+#reset:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* CSS */
+.pause-music {
+  background-image: linear-gradient(#42a1ec, #0070c9);
+  border: 1px solid #0077cc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  direction: ltr;
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  /* vertical-align: baseline; */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-left: 50px;
+}
+
+.pause-music:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.pause-music:hover {
+  background-image: linear-gradient(#51a9ee, #147bcd);
+  border-color: #1482d0;
+  text-decoration: none;
+}
+
+.pause-music:active {
+  background-image: linear-gradient(#3d94d9, #0067b9);
+  border-color: #006dbc;
+  outline: none;
+}
+
+.pause-music:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
